@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setInterval(fn, ms): =></title>
+</head>
+
+<body>
+    <h1>What time is it?</h1>    
+    <p id='time'></p>
+
+
+    <script>
+        // find the para element for time id
+        let timeElement = document.querySelector('#time');
+
+        // Arrow notation used: omit the word 'function'
+        // setInterval calls a function repeatedly. It takes 2 arguments: 
+        // 1st arg is a handler (same as a callback fn)
+        // 2nd arg is time (milliseconds), so 1 second is 1000 ms
+        setInterval( () => { 
+            let date = Date();              // create a new date object, initialized to right now
+            timeElement.innerHTML = date;   // display the current date & time
+        }, 1000)
+    </script>
+</body>
+
+</html>

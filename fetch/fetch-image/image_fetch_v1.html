@@ -1,0 +1,41 @@
+<!-- https://www.youtube.com/watch?v=tc8DU14qX6I&list=PLRqwX-V7Uu6YxDKpFzf_2D84p0cyk4T7X&index=3 -->
+<!-- By The Coding Train -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image fetch V1</title>
+</head>
+
+<body>
+    <img src="" id="rainbow-image" width="480">
+
+    <!-- Needs a live server -->
+    <script>
+        // find the image element on the document
+        let imageEl = document.querySelector('#rainbow-image');
+
+        console.log('about to fetch a rainbow');
+        fetch('images/rainbow.jpg')
+            .then(response => {
+                console.log(response);      // debug
+                // https://developer.mozilla.org/en-US/docs/Web/API/Response/blob
+                return response.blob();     // convert response to an image blob
+            })
+            .then(blob => {
+                console.log(blob);          // debug: blob is an object
+
+                // create an object URL for the image object & set the image source
+                imageEl.src = URL.createObjectURL(blob);
+            })
+            .catch(err => {
+                console.log('Error!')
+                console.error(err);
+            })
+    </script>
+</body>
+
+</html>

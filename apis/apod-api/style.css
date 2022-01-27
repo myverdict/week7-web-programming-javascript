@@ -1,0 +1,23 @@
+
+
+body {
+    background: white;
+    color: darkolivegreen;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 25px;
+}
+
+/* responsive image */
+#apod-image {
+    width: 75%;
+    height: auto;
+    display: none;
+    border: 2px solid salmon;
+    border-radius: 10px;
+}
+
+#apod-video {
+    width: 960px;
+    height: 540px;
+    display: none;
+}

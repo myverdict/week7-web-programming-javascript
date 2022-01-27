@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeout(fn, ms): =></title>
+</head>
+
+<body>
+    <h1>Expect an alert in 3 seconds after the page loads.</h1>    
+
+
+    <script>
+        // Arrow notation used: omit the word 'function'
+        // setTimeout is built into a browser, all browsers know this
+        // setTimeout calls a function after a delay. It takes 2 arguments: 
+        // 1st arg is a handler (same as a callback fn)
+        // 2nd arg is time (milliseconds), so 3 seconds is 3000 ms
+        setTimeout( () => {
+            alert('Hello! I waited 3 seconds to show this!');
+        }, 3000)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS: Callbacks, => fns, promises, apis</title>
+
+    <style>
+        .mono {
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        body {
+            line-height: 25pt;
+            font-size: large;
+        }
+
+        .youtube {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Week 7 Labs: JavaScript - Callbacks, arrow functions, promises & apis</h1>
+
+    <hr>
+
+    <ul>
+        <li>
+            JS Practice: JavaScript objects & arrays
+            <ul>
+                <li>
+                    <a href="https://myverdict.github.io/week7-web-programming-javascript/js-objects-arrays/first_arrays.js"
+                        target="_blank">First arrays</a>: accessing, reading, adding, removing, modifying, sorting,
+                    reversing & looping over array elements
+                </li>
+
+                <li>
+                    <a href="https://myverdict.github.io/week7-web-programming-javascript/js-objects-arrays/first_objects.js"
+                        target="_blank">First objects</a>: JSON - reading, changing and adding data
+                </li>
+
+                <li>
+                    <a href="https://myverdict.github.io/week7-web-programming-javascript/js-objects-arrays/nested_objects.js"
+                        target="_blank">Nested objects</a>: reading nested objects
+                </li>
+
+                <li>
+                    <a href="https://myverdict.github.io/week7-web-programming-javascript/js-objects-arrays/looping.js"
+                        target="_blank">Looping</a>: arrays & objects
+                </li>
+            </ul>
+        </li><br>
+
+        <li>
+            JavaScript classes
+            <ul>
+                <li>
+                    <a href="https://myverdict.github.io/week7-web-programming-javascript/js-classes/class_definition.js"
+                        target="_blank">Class definitions</a>: Classes are functions
+                </li>
+
+                <li>
+                    <a href="https://myverdict.github.io/week7-web-programming-javascript/js-classes/first_class_definition.js"
+                        target="_blank">First class definitions</a>: <span class="mono">Squirrel</span> class
+                </li>
+
+                <li>
+                    <a href="https://myverdict.github.io/week7-web-programming-javascript/js-classes/add_functions_to_json.js"
+                        target="_blank">JSON example</a>: Adding new functions to JSON
+                </li>
+            </ul>
+        </li><br>
+
+        <li>
+            Callback functions & Arrow notations (<span class="mono">=></span>):
+            <ul>
+                <li>
+                    <a href="https://myverdict.github.io/week7-web-programming-javascript/callback-functions/callbacks_animals.js"
+                        target="_blank">Animals</a>: <span class="mono">forEach()</span> looping with a classic callback
+                    function & callback function using <span class="mono">=></span>.
+                </li>
+
+                <li>
+                    <a href="https://myverdict.github.io/week7-web-programming-javascript/callback-functions/button.html"
+                        target="_blank">Button</a>: button with an <span class="mono">addEventListener()</span> for a
+                    <span class="mono">click</span> event with a callback function
+                </li>
+
+                <li>
+                    <span class="mono">setTimeout(handler/fn, ms)</span>: a method that calls a
+                    function or evaluates an expression after a specified number of milliseconds.
+                    <ul>
+                        <li>
+                            <a href="https://myverdict.github.io/week7-web-programming-javascript/callback-functions/setTimeout_delay.html"
+                                target="_blank">Classic callback function</a>: displays an alert after 3 seconds
+                        </li>
+
+                        <li>
+                            <a href="https://myverdict.github.io/week7-web-programming-javascript/callback-functions/setTimeout_delay_arrow_notation.html"
+                                target="_blank">Callback function with arrow notation (<span
+                                    class="mono">=></span>)</a>: displays an alert after 3 seconds
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <span class="mono">setInterval(handler/fn, ms)</span>: a method that calls a function or evaluates
+                    an expression at specified intervals. It will continue calling the function until
+                    <span class="mono">clearInterval()</span> is called, or the window is closed.
+                    <ul>
+                        <li>
+                            <a href="https://myverdict.github.io/week7-web-programming-javascript/callback-functions/setInterval_what_time_is_it.html"
+                                target="_blank">Classic callback function</a>: shows current date & time with seconds
+                            updating
+                        </li>
+
+                        <li>
+                            <a href="https://myverdict.github.io/week7-web-programming-javascript/callback-functions/setInterval_what_time_is_it_arrow_notation.html"
+                                target="_blank">Callback function with arrow notation
+                                (<span class="mono">=></span>)</a>: shows current date & time with seconds updating
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="https://myverdict.github.io/week7-web-programming-javascript/callback-functions/draw-on-a-picture/draw_word.html"
+                        target="_blank">Draw text on a picture</a>: drawing an image on a canvas with text writing input
+                    features. Demonstrates the <span class="mono">load</span> event listener with a callback function.
+                </li>
+            </ul>
+        </li><br>
+
+        <li>
+            <span class="mono">fetch()</span>
+            <ul>
+                <li>
+                    <a href="https://myverdict.github.io/week7-web-programming-javascript/fetch/promises.js"
+                        target="_blank">Promises</a>: Introduction
+                </li>
+
+                <li>
+                    <span class="youtube">YouTube</span> projects:
+                    <a href="https://www.youtube.com/watch?v=tc8DU14qX6I&list=PLRqwX-V7Uu6YxDKpFzf_2D84p0cyk4T7X&index=4"
+                        target="_blank">1.1: fetch() - Working With Data & APIs in JavaScript</a> by The Coding Train
+                    <br>Needs a live server for demonstration
+                    <ul>
+                        <li>
+                            Fetching images: 
+                            <ul>
+                                <li>
+                                    <a href="https://myverdict.github.io/week7-web-programming-javascript/fetch/fetch-image/image_fetch_v1.html"
+                                        target="_blank">V1</a>: locally fetching an image using a server with <span
+                                        class="mono">.then</span>
+                                </li>
+                                <li>
+                                    <a href="https://myverdict.github.io/week7-web-programming-javascript/fetch/fetch-image/image_fetch_v2.html"
+                                        target="_blank">V2</a>: locally fetching an image using a server with <span
+                                        class="mono">async</span> and <span class="mono">await</span> instead of <span
+                                        class="mono">.then</span>
+                                </li>
+                                <li>
+                                    <a href="https://myverdict.github.io/week7-web-programming-javascript/fetch/fetch-image/image_fetch_v3.html"
+                                        target="_blank">V3</a>: locally fetching multiple images using a server with
+                                    <span class="mono">async</span> and <span class="mono">await</span> instead of <span
+                                        class="mono">.then</span>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="https://myverdict.github.io/week7-web-programming-javascript/fetch/fetch-text/text_fetch.html"
+                                target="_blank">Fetching text</a>: locally fetching a text file using a server with
+                            <span class="mono">async</span> and <span class="mono">await</span> instead of <span
+                                class="mono">.then</span>
+                        </li>
+
+                        <li>
+                            <a href="https://myverdict.github.io/week7-web-programming-javascript/fetch/fetch-csv/csv_fetch.html"
+                                target="_blank">Fetching text from csv file</a>: locally fetching a csv file using a server with
+                            <span class="mono">async</span> and <span class="mono">await</span> instead of <span
+                                class="mono">.then</span>. Displaying the data into a line chart using ChartJS library.
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li><br>
+
+        <li>
+            API (Application Programming Interface)
+            <ul>
+                <li>
+                    <a href="https://wheretheiss.at/w/developer" target="_blank">ISS API</a>:
+                    Where is the ISS (International Space Station) at?
+                    <ul>
+                        <li>
+                            <a href="https://myverdict.github.io/week7-web-programming-javascript/apis/iss-api/fetch-iss/iss_location.html"
+                                target="_blank">Hello <span class="mono">fetch()</span></a>: promises & api calls
+                        </li>
+
+                        <li>
+                            <a href="https://myverdict.github.io/week7-web-programming-javascript/apis/iss-api/fetch-iss-map/iss_location_map.html"
+                                target="_blank">Leaflet Maps</a>: Open Street Maps (OSM) with leaflet marker
+                        </li>
+
+                        <li>
+                            <a href="https://myverdict.github.io/week7-web-programming-javascript/apis/iss-api/fetch-iss-map-updates-interval/iss_location_map_setInterval.html"
+                                target="_blank">Map updating ISS location</a>: <span class="mono">setInterval(fn,
+                                ms)</span> to update map, move marker,
+                            date iss data fetched, custom satellite marker
+                        </li>
+
+                        <li>
+                            <a href="https://myverdict.github.io/week7-web-programming-javascript/apis/iss-api/fetch-iss-map-updates-timeout/iss_location_map_setTimeout.html"
+                                target="_blank">Map updating ISS location</a>: recursive <span
+                                class="mono">setTimeout(fn, ms)</span> is a better approach than
+                            <span class="mono">setInterval(fn, ms)</span>. Handling failed requests.
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    Requesting country data -
+                    <a href="https://datahelpdesk.worldbank.org/knowledgebase/articles/898590-country-api-queries"
+                        target="_blank">World Bank API</a>:
+                    <a href="https://myverdict.github.io/week7-web-programming-javascript/apis/world-bank-api/play_game.html"
+                        target="_blank">Capital city quiz page</a>
+                </li>
+
+                <li>
+                    <a href="https://myverdict.github.io/week7-web-programming-javascript/apis/magic-8-ball-api/magic.html"
+                        target="_blank">Ask the magic ball a question</a>:
+                    <a href="https://8ball.delegator.com" target="_blank">Magic 8 ball API</a>
+                </li>
+
+                <li>
+                    <span class="youtube">YouTube</span> project:
+                    <a href="https://www.youtube.com/watch?v=J-lUOFXxG_0" target="_blank">How to Get User Location in
+                        HTML CSS & JavaScript</a> by CodingNepal<br>
+                    <a href="https://myverdict.github.io/week7-web-programming-javascript/apis/detect-user-location-api/view.html"
+                        target="_blank">Detect device location</a>: Uses the Geolocation Web API to access user's device
+                    location. Then uses the <a href="https://opencagedata.com/api#quickstart" target="_blank">OpenCage
+                        Geocoding API</a> to convert device location coordinates to a place. (Needs an API Key)
+                </li>
+
+                <li>
+                    <a href="https://myverdict.github.io/week7-web-programming-javascript/apis/sunrise-sunset-api/sun.html"
+                        target="_blank">Sunrise & Sunset Timings</a>: Uses the Geolocation Web API to access user's
+                    device location. Then uses the <a href="https://sunrise-sunset.org/api" target="_blank">Sunrise &
+                        Sunset API</a> to display sunrise & sunset timings for that location.
+                </li>
+
+                <li>
+                    <a href="https://myverdict.github.io/week7-web-programming-javascript/apis/weather-api/weather.html"
+                        target="_blank">Weather</a>: Uses the
+                    <a href="https://www.weather.gov/documentation/services-web-api" target="_blank">National Weather
+                        API Web Service</a>
+                </li>
+
+                <li>
+                    <a href="https://myverdict.github.io/week7-web-programming-javascript/apis/pokemon-api/pokemon_list.html"
+                        target="_blank">Pokemon list</a>: Uses the <a href="https://pokeapi.co/" target="_blank">Pokemon
+                        API</a>
+                </li>
+
+                <li>
+                    Currency exchange rates: <a href="https://exchangerate.host/#/" target="_blank">Exchange rates
+                        API</a>
+                    <ul>
+                        <li>
+                            <a href="https://myverdict.github.io/week7-web-programming-javascript/apis/exchange-rate-api/v1/currency_v1.html"
+                                target="_blank">V1</a>: Simple currency converter from US dollar to 3 defined
+                            conversions
+                        </li>
+                        <li>
+                            <a href="https://myverdict.github.io/week7-web-programming-javascript/apis/exchange-rate-api/v2/currency_v2.html"
+                                target="_blank">V2</a>: Currency converter from US dollar with currency dropdown list
+                            built from API & using smaller functions & using <span class="mono">setInterval(fn,
+                                ms)</span>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="https://myverdict.github.io/week7-web-programming-javascript/apis/apod-api/astronomy_pic.html"
+                        target="_blank">Astronomy picture of the day</a>: From <a href="https://apodapi.herokuapp.com/"
+                        target="_blank">APOD API</a>
+                </li>
+            </ul>
+        </li><br>
+    </ul>
+
+    <hr>
+
+    <p>
+        ITEC 2560-60: Web Client and Server Programming<br>
+        Minneapolis Community and Technical College (MCTC), Minneapolis, Minnesota<br>
+        Prof. Clara James, Fall 2020
+    </p>
+</body>
+
+</html>

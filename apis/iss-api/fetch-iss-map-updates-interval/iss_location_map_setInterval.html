@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Where's the ISS?</title>
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+
+    <!-- Leaflet JS: Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+
+    <!-- Our stylesheet. Make sure the size of the map div is set before trying to draw the map.-->
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <!-- async = load the script in parallel with the HTML -->
+    <!-- defer = wait until the HTML & Leaflet script has finished loading before running the script -->
+    <script async defer src="fetch.js"></script>
+</head>
+
+<body>
+    <h1>Where is the International Space Station (ISS)?</h1>
+
+    <div>
+        <p>This page will update every 10 seconds.</p>
+        <p id="time"></p>
+        <p>ISS Latitude (North/South): <span id="iss-lat"></span></p>
+        <p>ISS Longitude (East/West): <span id="iss-long"></span></p>
+    </div>
+
+    <!-- displays the Leaflet map -->
+    <div id="iss-mapID"></div>
+
+    <!-- ISS icon attribute -->
+    <p class="attribution">
+        Icon <a href="https://thenounproject.com/halfbitgm/collection/space/?i=956251" target="_blank">iss</a> 
+        by <a href="https://thenounproject.com/halfbitgm/" target="_blank">Viktor Korobkov</a> 
+        from <a href="https://thenounproject.com/" target="_blank">the Noun Project</a>.
+    </p>
+</body>
+
+</html>
