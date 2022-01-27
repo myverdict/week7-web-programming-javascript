@@ -9,7 +9,7 @@ JS Functions, Callbacks, Promises &amp; APIs
   <li>JS Practice: JavaScript objects & arrays</li>
   <li>JavaScript classes</li>
   <li>Callback functions & Arrow notations</li>
-  <li>fetch()</li>
+  <li>fetch() and promises</li>
   <li>API (Application Programming Interface)</li>
 </ul>
 
