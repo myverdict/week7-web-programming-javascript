@@ -13,6 +13,6 @@ JS Functions, Callbacks, Promises &amp; APIs
   <li>API (Application Programming Interface)</li>
 </ul>
 
-<a href="https://myverdict.github.io/week6-web-programming-javascript/index.html">
+<a href="https://myverdict.github.io/week7-web-programming-javascript/index.html">
     Click here to view live!</a> 
     
