@@ -12,6 +12,7 @@ JS Functions, Callbacks, Promises &amp; APIs
   <li>Callback functions & Arrow notations</li>
   <li>fetch() and promises</li>
   <li>API (Application Programming Interface)</li>
+  <li>Lab 7 repository</li>
 </ul>
 
 <a href="https://myverdict.github.io/week7-web-programming-javascript/index.html">
