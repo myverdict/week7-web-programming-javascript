@@ -3,45 +3,43 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Text fetch</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <h1>Fetch a poem</h1>
-    
-    <p id='poemId'></p>
+
+    <p id="poemId"></p>
 
     <script>
-        // find the paragraph element for the poem
-        let poemEl = document.querySelector('#poemId');
+      // find the paragraph element for the poem
+      let poemEl = document.querySelector("#poemId");
 
-        console.log('about to fetch a poem');   // debug
+      console.log("about to fetch a poem"); // debug
 
-        // call the async function
-        catchPoem()
-            .then(response => {
-                console.log(response);          // debug: this is the poem
-                poemEl.innerHTML = response;
-                console.log('yay');             // debug
-            })
-            .catch(err => {
-                console.log('Error!');
-                console.error(err);
-            })
+      // call the async function
+      catchPoem()
+        .then((response) => {
+          console.log(response); // debug: this is the poem
+          poemEl.innerHTML = response;
+          console.log("yay"); // debug
+        })
+        .catch((err) => {
+          console.log("Error!");
+          console.error(err);
+        });
 
-        // makes a fetch request, 
-        // turns the body of what comes back in the HTTP response into a text
-        // converts the text into the format that the DOM element expects 
-        async function catchPoem() {
-            const response = await fetch('poem.txt');
-            return await response.text();
-        }
+      // makes a fetch request,
+      // turns the body of what comes back in the HTTP response into a text
+      // converts the text into the format that the DOM element expects
+      async function catchPoem() {
+        const response = await fetch("poem.txt");
+        return await response.text();
+      }
     </script>
-</body>
-
+  </body>
 </html>

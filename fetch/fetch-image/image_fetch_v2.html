@@ -3,43 +3,42 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Image fetch V2</title>
-</head>
+  </head>
 
-<body>
-    <img src="" id="rainbow-image" width="480">
+  <body>
+    <img src="" id="rainbow-image" width="480" />
 
     <!-- Needs a live server -->
     <script>
-        // find the image element on the document
-        let imageEl = document.querySelector('#rainbow-image');
+      // find the image element on the document
+      let imageEl = document.querySelector("#rainbow-image");
 
-        console.log('about to fetch a rainbow');
+      console.log("about to fetch a rainbow");
 
-        // call the async function
-        catchRainbow()
-            .then(response => console.log('yay'))
-            .catch(error => {
-                console.log('Error!');
-                console.error(error);
-            })
+      // call the async function
+      catchRainbow()
+        .then((response) => console.log("yay"))
+        .catch((error) => {
+          console.log("Error!");
+          console.error(error);
+        });
 
-        // makes a fetch request, 
-        // turns the body of what comes back in the HTTP response into a blob
-        // converts the blob into the format that the DOM element expects 
-        async function catchRainbow() {
-            const response = await fetch('images/rainbow.jpg');
-            // https://developer.mozilla.org/en-US/docs/Web/API/Response/blob
-            const blob = await response.blob();
+      // makes a fetch request,
+      // turns the body of what comes back in the HTTP response into a blob
+      // converts the blob into the format that the DOM element expects
+      async function catchRainbow() {
+        const response = await fetch("images/rainbow.jpg");
+        // https://developer.mozilla.org/en-US/docs/Web/API/Response/blob
+        const blob = await response.blob();
 
-            // create an object URL for the image object and set image source
-            imageEl.src = URL.createObjectURL(blob);
-        }
+        // create an object URL for the image object and set image source
+        imageEl.src = URL.createObjectURL(blob);
+      }
     </script>
-</body>
-
+  </body>
 </html>

@@ -4,95 +4,94 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CSV fetch</title>
 
     <!-- Chart JS library -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.6.1/dist/chart.min.js"></script>
-</head>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
 
-<body>
+  <body>
     <canvas id="myChart" width="800" height="400"></canvas>
 
-
     <script>
-        createChart();              // call the chart async function
+      createChart(); // call the chart async function
 
-        async function createChart() {
-            const data = await getCsvData();    // call the async function
-            const ctx = document.getElementById('myChart').getContext('2d');
-            const myChart = new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: data.xLabels,
-                    datasets: [{
-                        label: 'Combined Land-Surface Air and Sea-Surface Water Temperature Anomalies in C°',
-                        data: data.yTemps,
+      async function createChart() {
+        const data = await getCsvData(); // call the async function
+        const ctx = document.getElementById("myChart").getContext("2d");
+        const myChart = new Chart(ctx, {
+          type: "line",
+          data: {
+            labels: data.xLabels,
+            datasets: [
+              {
+                label:
+                  "Combined Land-Surface Air and Sea-Surface Water Temperature Anomalies in C°",
+                data: data.yTemps,
 
-                        borderColor: 'rgba(255, 99, 132, 1)',
-                        borderWidth: 1
-                    }]
+                borderColor: "rgba(255, 99, 132, 1)",
+                borderWidth: 1,
+              },
+            ],
+          },
+          options: {
+            scales: {
+              y: {
+                ticks: {
+                  // Include a dollar sign in the ticks
+                  callback: function (value, index, values) {
+                    return value + "°";
+                  },
                 },
-                options: {
-                    scales: {
-                        y: {
-                            ticks: {
-                                // Include a dollar sign in the ticks
-                                callback: function (value, index, values) {
-                                    return value + '°';
-                                }
-                            }
-                        }
-                    }
-                },
-            });
-        }
+              },
+            },
+          },
+        });
+      }
 
+      // Data from: https://data.giss.nasa.gov/gistemp/
+      // Mean from: https://earthobservatory.nasa.gov/world-of-change/DecadalTemp
+      async function getCsvData() {
+        const xLabels = []; // labels for the x-axis
+        const yTemps = []; // y-axis values
 
-        // Data from: https://data.giss.nasa.gov/gistemp/
-        // Mean from: https://earthobservatory.nasa.gov/world-of-change/DecadalTemp
-        async function getCsvData() {
-            const xLabels = [];         // labels for the x-axis
-            const yTemps = [];          // y-axis values
+        // const response = await fetch('test.csv');
+        const response = await fetch("ZonAnn.Ts+dSST.csv");
+        // https://developer.mozilla.org/en-US/docs/Web/API/Response/text
+        const data = await response.text();
+        // console.log(data);      // debug
 
-            // const response = await fetch('test.csv');
-            const response = await fetch('ZonAnn.Ts+dSST.csv');
-            // https://developer.mozilla.org/en-US/docs/Web/API/Response/text
-            const data = await response.text();
-            // console.log(data);      // debug
+        // create rows and put each row in an array
+        // To split each data line from the csv file - returns an array
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split
+        // const rows = data.split('\n');
 
-            // create rows and put each row in an array
-            // To split each data line from the csv file - returns an array
-            // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split
-            // const rows = data.split('\n');
+        // create rows and put each row in an array
+        // To remove the first line from the csv file
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
+        const table = data.split("\n").splice(1); // removes the 0th element and
+        // console.log(rows);      // debug
 
-            // create rows and put each row in an array
-            // To remove the first line from the csv file
-            // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
-            const table = data.split('\n').splice(1);    // removes the 0th element and 
-            // console.log(rows);      // debug
+        // splitting each rows to smaller chunks
+        table.forEach((row) => {
+          const columns = row.split(",");
 
-            // splitting each rows to smaller chunks
-            table.forEach(row => {
-                const columns = row.split(',');
+          const year = columns[0]; // first column
+          const temp = columns[1]; // second column
 
-                const year = columns[0];        // first column
-                const temp = columns[1];        // second column
+          // push the year and temps onto arrays (used for Chart creation)
+          xLabels.push(year);
+          yTemps.push(parseFloat(temp) + 14);
 
-                // push the year and temps onto arrays (used for Chart creation)
-                xLabels.push(year);
-                yTemps.push(parseFloat(temp) + 14);
+          console.log(year, temp); // debug
+        });
 
-                console.log(year, temp);    // debug
-            })
-
-            return { xLabels, yTemps };
-        }
+        return { xLabels, yTemps };
+      }
     </script>
-</body>
-
+  </body>
 </html>

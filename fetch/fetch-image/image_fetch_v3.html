@@ -3,61 +3,59 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Image fetch V3</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <h1>Fetch Images</h1>
 
     <!-- Needs a live server -->
     <script>
-        console.log('about to fetch some images');      // debug
+      console.log("about to fetch some images"); // debug
 
-        // an array of images
-        const filenames = [
-            'images/rainbow.jpg',
-            'images/saintpaul.jpg',
-            'images/willowcreek.jpg'
-        ];
+      // an array of images
+      const filenames = [
+        "images/rainbow.jpg",
+        "images/saintpaul.jpg",
+        "images/willowcreek.jpg",
+      ];
 
-        // calling the async function
-        catchRainbows(filenames)
-            .then(response => {
-                console.log('yay');
-            })
-            .catch(error => {
-                console.log('error!');
-                console.error(error);
-            });
+      // calling the async function
+      catchRainbows(filenames)
+        .then((response) => {
+          console.log("yay");
+        })
+        .catch((error) => {
+          console.log("error!");
+          console.error(error);
+        });
 
-        // makes a fetch request, 
-        // turns the body of what comes back in the HTTP response into a blob
-        // converts the blob into the format that the DOM element expects 
-        async function catchRainbows(filenames) {
-            for (let filename of filenames) {
-                const response = await fetch(filename);
-                // https://developer.mozilla.org/en-US/docs/Web/API/Response/blob
-                const blob = await response.blob();
+      // makes a fetch request,
+      // turns the body of what comes back in the HTTP response into a blob
+      // converts the blob into the format that the DOM element expects
+      async function catchRainbows(filenames) {
+        for (let filename of filenames) {
+          const response = await fetch(filename);
+          // https://developer.mozilla.org/en-US/docs/Web/API/Response/blob
+          const blob = await response.blob();
 
-                // create a new image element
-                const img = document.createElement('img');
+          // create a new image element
+          const img = document.createElement("img");
 
-                // create an object URL for the image object and set image source
-                img.src = URL.createObjectURL(blob);
+          // create an object URL for the image object and set image source
+          img.src = URL.createObjectURL(blob);
 
-                // set the image width
-                img.width = '200';
+          // set the image width
+          img.width = "200";
 
-                // add the image element to the document webpage
-                document.body.append(img);
-            }
+          // add the image element to the document webpage
+          document.body.append(img);
         }
+      }
     </script>
-</body>
-
+  </body>
 </html>
