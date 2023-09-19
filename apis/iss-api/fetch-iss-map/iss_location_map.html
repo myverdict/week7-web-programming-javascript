@@ -1,40 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Where's the ISS? -> map</title>
 
     <!-- Leaflet CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-        crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
 
-    <!-- Leaflet JS: Make sure you put this AFTER Leaflet's CSS -->
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-        crossorigin=""></script>
+    <!-- Leaflet JavaScript: Make sure you put this AFTER Leaflet's CSS -->
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
 
     <!-- Our stylesheet. Make sure the size of the map div is set before trying to draw the map.-->
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css" />
 
     <!-- async = load the script in parallel with the HTML -->
     <!-- defer = wait until the HTML & Leaflet script has finished loading before running the script -->
     <script async defer src="fetch.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <h1>Where is the International Space Station (ISS)?</h1>
 
     <div>
-        <p>ISS Latitude (North/South): <span id="iss-lat"></span></p>
-        <p>ISS Longitude (East/West): <span id="iss-long"></span></p>
+      <p>ISS Latitude (North/South): <span id="iss-lat"></span></p>
+      <p>ISS Longitude (East/West): <span id="iss-long"></span></p>
     </div>
 
     <!-- displays the Leaflet map -->
     <div id="iss-mapID"></div>
-</body>
-
+  </body>
 </html>

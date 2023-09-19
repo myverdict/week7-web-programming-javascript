@@ -1,37 +1,38 @@
 body {
-    background: skyblue;
-    color: navy;
-    text-align: center;
-    font-family: 'Indie Flower', cursive;;
-    font-size: 2em;
+  background: skyblue;
+  color: navy;
+  text-align: center;
+  font-family: "Indie Flower", cursive;
+  font-size: 2em;
 }
 
 label {
-    font-weight: bold;
+  font-weight: bold;
 }
 
-button, input{
-    font-family: 'Maven Pro', sans-serif;
-    font-size: 1em;
-    color: navy;
+button,
+input {
+  font-family: "Maven Pro", sans-serif;
+  font-size: 1em;
+  color: navy;
 }
 
 input {
-    width: 70%;
-    margin: 20px;
+  width: 70%;
+  margin: 20px;
 }
 
 #error {
-    color: darkred;
-    font-family: 'Maven Pro', sans-serif;
+  color: darkred;
+  font-family: "Maven Pro", sans-serif;
 }
 
-#answer { 
-    font-size: 2em;
-    opacity: 0;
-    transition: opacity 2s;
-    font-family: 'Maven Pro', sans-serif;
-    background-color: salmon;
-    
-    border-radius: 20px;
+#answer {
+  font-size: 2em;
+  opacity: 0;
+  transition: opacity 2s;
+  font-family: "Maven Pro", sans-serif;
+  background-color: salmon;
+
+  border-radius: 20px;
 }
