@@ -14,9 +14,7 @@ let playAgainButton = document.querySelector("#play-again");
 // organized in the order of the script tags so the countriesAndCodes array is available to this script.
 
 console.log(countriesAndCodes); // You don't need to log countriesAndCodes - just proving it is available
-console.log(
-  `There are ${countriesAndCodes.length} countries & codes in the array.`
-); // debug
+console.log(`There are ${countriesAndCodes.length} countries & codes in the array.`); // debug
 
 // Creating empty variables
 let randomCountryIndex; // a random valid array index
@@ -130,16 +128,10 @@ function fetching() {
       // if the user guesses correctly
       if (userAnswerGuess === capital.toLowerCase()) {
         if (userAnswerGuess === "" && capital === "") {
-          console.log(
-            `There is no capital for this country. User guess is correct.`
-          ); // debug
+          console.log(`There is no capital for this country. User guess is correct.`); // debug
           resultTextElement.innerHTML = `Correct! ${countryName} does not have a capital.`;
         } else {
-          console.log(
-            `User guess is correct. ${
-              userAnswerGuess === capital.toLowerCase()
-            }`
-          ); // debug
+          console.log(`User guess is correct. ${userAnswerGuess === capital.toLowerCase()}`); // debug
           resultTextElement.innerHTML = `Correct! The capital of ${countryName} is ${capital}.`;
         }
       }
@@ -148,11 +140,9 @@ function fetching() {
       else {
         // if the user has entered an answer & there is no capital
         if (userAnswerGuess != "" && capital === "") {
-          console.log(
-            `There is no capital for this country. User guess is incorrect.`
-          ); // debug
+          console.log(`There is no capital for this country. User guess is incorrect.`); // debug
           resultTextElement.innerHTML = `Wrong! The capital of ${countryName} is not ${userAnswerGuess}.
-                                                  ${countryName} does not have a capital.`;
+                                        ${countryName} does not have a capital.`;
         }
         // if the user has not entered an answer
         else if (userAnswerGuess === "") {
@@ -161,11 +151,7 @@ function fetching() {
         }
         // if the user's answer does not match the capital
         else {
-          console.log(
-            `User guess is incorrect. ${
-              userAnswerGuess === capital.toLowerCase()
-            }`
-          ); // debug
+          console.log(`User guess is incorrect. ${userAnswerGuess === capital.toLowerCase()}`); // debug
           resultTextElement.innerHTML = `Wrong! The capital of ${countryName} is not ${userAnswerGuess}, it is ${capital}.`;
         }
       }
