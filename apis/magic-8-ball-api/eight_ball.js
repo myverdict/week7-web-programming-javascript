@@ -1,6 +1,5 @@
 // API documentation: https://8ball.delegator.com
 const magic8BallUrl = "https://8ball.delegator.com/magic/JSON/";
-// const magic8BallUrl = "https://eightballapi.com/api";
 
 let questionInputEl = document.querySelector("#question");
 let askQuestionButton = document.querySelector("#ask-question");

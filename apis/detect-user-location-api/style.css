@@ -1,44 +1,44 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background: linear-gradient(#252930 50%, #5372F0 50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(#252930 50%, #5372f0 50%);
 }
 
 button {
-    font-size: 50px;
-    padding: 25px 46px;
-    border: none;
-    border-radius: 10px;
-    font-weight: 800;
-    color: #5372F0;
-    cursor: pointer;
+  font-size: 50px;
+  padding: 25px 46px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 800;
+  color: #5372f0;
+  cursor: pointer;
 }
 
 button[disabled] {
-    background: lightgray;
-    opacity: .8;
+  background: lightgray;
+  opacity: 0.8;
 }
 
 footer {
-    position: fixed;
-    padding: 10px 10px 0px 10px;
-    bottom: 0;
-    width: 100%;
+  position: fixed;
+  padding: 10px 10px 0px 10px;
+  bottom: 0;
+  width: 100%;
 
-    /* Height of the footer*/
-    height: 60px;
-    background: white;
+  /* Height of the footer*/
+  height: 60px;
+  background: white;
 
-    /* other styling */
-    text-align: center;
-    font-size: smaller;
+  /* other styling */
+  text-align: center;
+  font-size: smaller;
 }
