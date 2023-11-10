@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Long & Lat</title>
+  </head>
+
+  <body>
+    <h1>Long & Lat app</h1>
+
+    <p>Hello!</p>
+
+    <p>Latitude: <span id="lat"></span>&deg;</p>
+    <p>Longitude: <span id="long"></span>&deg;</p>
+
+    <script>
+      // https://developer.mozilla.org/en-US/docs/Web/API/Navigator
+      // https://developer.mozilla.org/en-US/docs/Web/API/Navigator/geolocation
+      // API documentation: https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API
+
+      // test for the presence of geolocation: if the geolocation object exists
+      if ('geolocation' in navigator) {
+        /* geolocation services are available */
+        console.log('geolocation services available');
+
+        navigator.geolocation.getCurrentPosition(async (position) => {
+          // console.log(position);              // debug
+
+          let lat = position.coords.latitude;
+          let long = position.coords.longitude;
+
+          document.querySelector('#lat').innerHTML = lat;
+          document.querySelector('#long').innerHTML = long;
+
+          // this is the data that needs to be sent to the server
+          const data = { lat, long };
+
+          // https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+          const options = {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+          };
+          // use fetch to send a POST request, where data is sent to the server
+          // fetch('/api', options)
+          //     // then, receive the response from the server
+          //     .then(response => {
+          //         console.log(response);
+          //     })
+
+          // alternate way of writing the above using async await
+          // fn with 'position' parameter is made async above
+          const response = await fetch('/api', options);
+          const json = await response.json();
+          console.log(json);
+        });
+      } else {
+        /* geolocation services are NOT available */
+        console.log('geolocation services NOT available');
+      }
+    </script>
+  </body>
+</html>
